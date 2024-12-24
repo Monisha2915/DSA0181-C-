@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, sum = 0;
+
+    // Prompt user for input
+    cout << "Enter a positive integer N: ";
+    cin >> N;
+
+    // Check if the input is positive
+    if (N < 1) {
+        cout << "Please enter a positive integer." << endl;
+    } else {
+        // Use a for loop to calculate the sum
+        for (int i = 1; i <= N; i++) {
+            sum += i;
+        }
+
+        // Output the result
+        cout << "The sum of the first " << N << " natural numbers is: " << sum << endl;
+    }
+
+    return 0;
+}
