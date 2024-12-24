@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+
+    // Prompt user for input
+    cout << "Enter the number of terms for the Fibonacci series: ";
+    cin >> N;
+
+    // Initialize the first two terms
+    int first = 0, second = 1;
+
+    // Print the Fibonacci series up to N terms
+    cout << "Fibonacci series up to " << N << " terms: " << endl;
+
+    for (int i = 1; i <= N; i++) {
+        if (i == 1) {
+            cout << first << " ";  // Print the first term
+        } else if (i == 2) {
+            cout << second << " "; // Print the second term
+        } else {
+            int next = first + second;
+            cout << next << " ";  // Print the next term in the series
+            first = second;       // Update first to the previous second
+            second = next;        // Update second to the new next term
+        }
+    }
+
+    cout << endl;
+    return 0;
+}
