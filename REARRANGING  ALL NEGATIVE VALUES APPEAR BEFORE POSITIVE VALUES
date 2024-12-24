@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+void rearrangeArray(int arr[], int size) {
+    int left = 0, right = size - 1;
+
+    while (left <= right) {
+        // If the left element is negative, move to the next
+        if (arr[left] < 0) {
+            left++;
+        }
+        // If the right element is positive, move to the previous
+        else if (arr[right] > 0) {
+            right--;
+        }
+        // Swap negative element from the right with positive element from the left
+        else {
+            swap(arr[left], arr[right]);
+            left++;
+            right--;
+        }
+    }
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int arr[] = {1, -2, 3, -4, -5, 6, -7, 8, -9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Original array: ";
+    printArray(arr, size);
+
+    rearrangeArray(arr, size);
+
+    cout << "Rearranged array: ";
+    printArray(arr, size);
+
+    return 0;
+}
