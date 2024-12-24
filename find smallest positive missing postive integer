@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to return the smallest positive missing positive integer.
+int findSmallest(vector<int> &arr, int n)
+{
+    bool flag = false;
+    int x = 0;
+
+    // Searching for all elements from 1 to 'N' using a nested 'For' loop.
+    for (int i = 1; i <= n + 1; i++)
+    {
+        // Initialising flag to false every time the second loop runs.
+        flag = false;
+        for (int j = 0; j < n; j++)
+        {
+            // In case the element is found, flag becomes true.
+            // x is initialised as the number which is found in the array.
+            if (arr[j] == i)
+            {
+                flag = true;
+                x = i;
+                break;
+            }
+        }
+
+        // In case the element is not found.
+        if (flag == false)
+            break;
+    }
+
+    // x + 1 gives the smallest number that is missing in the array.
+    return x + 1;
+}
+int main()
+{
+    vector<int> arr;
+    int n, i, a;
+
+    // Taking user input.
+    cout << "Enter the number of elements\n";
+    cin >> n;
+    cout << "Enter the elements\n";
+    for (i = 0; i < n; i++)
+    {
+        cin >> a;
+        arr.push_back(a);
+    }
+    // Calling the function.
+    cout << "The smallest missing positive integer is " << findSmallest(arr, n);
+    return 0;
+}
