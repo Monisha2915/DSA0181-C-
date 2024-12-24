@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int units;
+    double billAmount = 0;
+
+    // Prompt user for input
+    cout << "Enter the number of units consumed: ";
+    cin >> units;
+
+    // Calculate bill based on slabs
+    if (units <= 100) {
+        billAmount = units * 5; // ?5/unit for 1–100
+    } else if (units <= 300) {
+        billAmount = (100 * 5) + ((units - 100) * 8); // ?8/unit for 101–300
+    } else {
+        billAmount = (100 * 5) + (200 * 8) + ((units - 300) * 10); // ?10/unit above 300
+    }
+
+    // Output the bill amount
+    cout << "Electricity Bill: ?" << billAmount << endl;
+
+    return 0;
+}
