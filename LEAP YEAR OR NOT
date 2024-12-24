@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int year;
+
+    // Prompt user for input
+    cout << "Enter a year: ";
+    cin >> year;
+
+    // Check if the year is a leap year using conditional operators
+    string result = (year % 4 == 0) ? 
+                    ((year % 100 == 0) ? 
+                     ((year % 400 == 0) ? "Leap year" : "Not a leap year") 
+                     : "Leap year") 
+                    : "Not a leap year";
+
+    // Output the result
+    cout << year << " is " << result << "." << endl;
+
+    return 0;
+}
