@@ -1,0 +1,47 @@
+// CPP code to check if arrays
+// are permutations of each other
+#include <iostream>
+using namespace std;
+
+// Function to check if arrays
+// are permutations of each other.
+bool arePermutations(int a[], int b[], int n, int m)
+{
+
+	int sum1 = 0, sum2 = 0, mul1 = 1, mul2 = 1;
+
+	// Calculating sum and multiply of first array
+	for (int i = 0; i < n; i++) {
+		sum1 += a[i];
+		mul1 *= a[i];
+	}
+
+	// Calculating sum and multiply of second array
+	for (int i = 0; i < m; i++) {
+		sum2 += b[i];
+		mul2 *= b[i];
+	}
+
+	// If sum and mul of both arrays are equal,
+	// return true, else return false.
+	return ((sum1 == sum2) && (mul1 == mul2));
+}
+
+// Driver code
+int main()
+{
+
+	int a[] = { 1, 3, 2 };
+	int b[] = { 3, 1, 2 };
+
+	int n = sizeof(a) / sizeof(int);
+	int m = sizeof(b) / sizeof(int);
+
+	if (arePermutations(a, b, n, m)) 
+		cout << "Yes" << endl;
+	
+	else
+		cout << "No" << endl;
+
+	return 0;
+}
