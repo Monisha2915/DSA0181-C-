@@ -1,0 +1,30 @@
+#include  <iostream> 
+using namespace std;
+
+// Function to perform linear search
+int search(int array[], int n, int x) {
+    // Going through array sequentially
+    for (int i = 0; i  <  n; i++) {
+        if (array[i] == x) {
+            return i; // Return the index where the element is found
+        }
+    }
+    return -1; // Element not found
+}
+
+// Main function
+int main() {
+    int array[] = {2, 4, 7, 8, 0, 1, 9};
+    int x = 8;
+    int n = sizeof(array) / sizeof(array[0]); // Calculate the number of elements in the array
+
+    int result = search(array, n, x); // Perform the search
+
+    if (result == -1) {
+        cout  <<  "Element not found";
+    } else {
+        cout  <<  "Element found at index: "  <<  result;
+    }
+
+    return 0;
+}
